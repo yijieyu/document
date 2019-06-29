@@ -4,6 +4,7 @@
     - 新增加文档，记得更新下面的目录结构
 
 ## 目录结构 
+```
 ├── LICENSE
 ├── README.md
 ├── docker
@@ -20,3 +21,4 @@
     ├── nginx_php.md                php-nginx配置
     ├── nginx_static_resource.md    静态资源配置
     └── react_vue_angular.md        前端框架打包后配置
+```
