@@ -59,6 +59,7 @@ docker compose是docker的容器编排服务，使用yml配置容器状态与依
 - environment 定义容器的环境变量
 - ports 主机与容器的端口映射
 - volumes 挂载主机目录和容器卷
+- networks 网络设置
 
 
 
