@@ -1,0 +1,13 @@
+version: '2'
+services:
+  redis:
+    image: redis:4.0-alpine
+    container_name: redis
+    privileged: true
+    restart: always
+    volumes:
+      - ./conf/redis.conf:/etc/redis/redis.conf
+      - ./data:/data
+      - ./localtime:/etc/localtime:ro
+    ports:
+      - "0.0.0.0:6379:6379"

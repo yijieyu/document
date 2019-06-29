@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  mysql:
+      image: mysql:5.7
+      container_name: mysql
+      privileged: true
+      restart: always
+      hostname: mysql
+      volumes:
+        - ./mysql/dbdata:/var/lib/mysql
+        - ./mysql/mysql.conf.d/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf:ro
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_USER: root
+        MYSQL_PASSWORD: root
+        MYSQL_ROOT_PASSWORD: root
