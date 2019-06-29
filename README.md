@@ -8,6 +8,29 @@
 ├── LICENSE
 ├── README.md
 ├── docker
+│   ├── docker-compose              docker-compose 各种实例
+│   │   ├── mysql                   mysql 实例
+│   │   │   └── docker-compose.yml
+│   │   ├── php                     php使用docker-compose 运行实例
+│   │   │   ├── docker-compose.yml
+│   │   │   ├── nginx
+│   │   │   │   ├── conf.d
+│   │   │   │   │   └── tvblack_adv.conf
+│   │   │   │   └── nginx.conf
+│   │   │   ├── ott_admin
+│   │   │   │   └── docker-entrypoint.sh
+│   │   │   └── php7.1.8
+│   │   │       ├── php.conf.d
+│   │   │       │   ├── docker.conf
+│   │   │       │   ├── www.conf
+│   │   │       │   └── zz-docker.conf
+│   │   │       ├── php.ini
+│   │   │       └── php.ini.bak
+│   │   └── redis                   redis 实例
+│   │       └── docker-compose.yml
+│   ├── docker-file                 docker file 各种实例
+│   │   └── php7.1.8                php7.1.8 实例
+│   │       └── Dockerfile
 │   └── docker.md                   docker常用命令
 ├── git
 │   └── git.md                      git 常用命令操作
