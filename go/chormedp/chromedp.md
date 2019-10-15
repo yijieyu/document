@@ -32,7 +32,7 @@
    - 打开腾讯视频搜索页面 https://v.qq.com/x/search/
    - 输入哪吒
    - 点击全网搜
-   - 获取第一个结果
+   - 获取第一个结果的标题
    - 搜索截图
 #### 代码
 ```go
@@ -44,7 +44,9 @@ import (
 	"log"
 
 	"github.com/chromedp/chromedp"
+	"github.com/davecgh/go-spew/spew"
 )
+
 func main() {
 
 	options := []chromedp.ExecAllocatorOption{
@@ -65,12 +67,15 @@ func main() {
 	ctx, cancel := chromedp.NewContext(c)
 	defer cancel()
 	var buf []byte
+	var title string
+	var ok bool
 	err := chromedp.Run(ctx,
 		chromedp.Navigate(`https://v.qq.com/x/search/?q=&stag=&smartbox_ab=`),
 		chromedp.WaitVisible(`#searchForm`),
 		chromedp.SendKeys(`#keywords`, `哪吒`, chromedp.ByID),
 		chromedp.Click(`.search_btn`, chromedp.NodeVisible),
 		chromedp.WaitVisible(`.wrapper_main .result_item `),
+		chromedp.AttributeValue(`.wrapper_main .result_item:nth-child(2) ._infos .figure_pic`, `alt`, &title, &ok),
 		chromedp.CaptureScreenshot(&buf),
 	)
 	if err != nil {
@@ -79,9 +84,19 @@ func main() {
 	if err := ioutil.WriteFile("/tmp/fullScreenshot.png", buf, 0644); err != nil {
 		log.Fatal(err)
 	}
+
+	spew.Dump("title:", title)
+	spew.Dump("ok:", ok)
 }
 ```
-![image](https://raw.githubusercontent.com/yijieyu/document/master/go/chormedp/fullScreenshot.png)
+标题： 
+```text
+(string) (len=6) "title:"
+(string) (len=23) "\x05哪吒\x06之魔童降世"
+(string) (len=3) "ok:"
+(bool) true
+```
+![截图](https://raw.githubusercontent.com/yijieyu/document/master/go/chormedp/fullScreenshot.png)
 
 ## 使用二
    - 抓取页面的运行js后的结果
