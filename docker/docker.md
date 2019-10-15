@@ -64,13 +64,13 @@ docker compose是docker的容器编排服务，使用yml配置容器状态与依
 
 
 # docker安装
-- 下载docker文件
+- 下载docker文件(https://docs.docker.com/install/linux/docker-ce/centos/)
 - 安装 rpm -i docker-ce-17.06.0.ce-1.el7.centos.x86_64.rpm
 - `yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`
 -- `sudo yum install -y yum-utils  device-mapper-persistent-data lvm2`
 -- `container-selinux >= 2.9 错误` 解决：wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo   yum install epel-release   #阿里云上的epel源，然后yum install container-selinux
 
--- 修改docker配置存储
+-- 修改docker配置存储 vim /usr/lib/systemd/system/docker.service 
  --graph=/opt/docker
 
 - docker-composer安装
