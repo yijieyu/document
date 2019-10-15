@@ -151,15 +151,17 @@ const (
 )
 ```
 运行结果：
-`
- (*main.playerObj)(0xc000160100)({
+```text
+(*main.playerObj)(0xc000160100)({
   VideoURL: (string) (len=107) "https://www.sexvid.xxx/get_file/7/83919b5498e71fef8aeab85ba011ec677858523f54/51000/51656/51656.mp4/?br=2538",
   Rnd: (string) (len=10) "1571041408"
  })
+ 
  (string) (len=118) "https://www.sexvid.xxx/get_file/7/83919b5498e71fef8aeab85ba011ec677858523f54/51000/51656/51656.mp4/?br=2538&1571041408"
  (time.Duration) 28.979338921s
+ 
  Process finished with exit code 0
-`
+```
 
 # chromedp官方 
    - demo https://github.com/chromedp/examples
