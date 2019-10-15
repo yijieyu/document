@@ -81,7 +81,7 @@ func main() {
 	}
 }
 ```
-![截图](http://github.com/yijieyu/document/raw/master/go/chormedp/fullScreenshot.png)
+![image](https://raw.githubusercontent.com/yijieyu/document/master/go/chormedp/fullScreenshot.png)
 
 ## 使用二
    - 抓取页面的运行js后的结果
