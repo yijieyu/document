@@ -28,6 +28,15 @@
 #### 安装
     go get -u github.com/chromedp/chromedp@master
     
+#### debian安装google-chrome
+    https://computingforgeeks.com/install-google-chrome-browser-on-debian/
+    
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    
+    apt -y install wget
+    
+    apt install ./google-chrome-stable_current_amd64.deb
+    
 ## 使用一
    - 打开腾讯视频搜索页面 https://v.qq.com/x/search/
    - 输入哪吒
