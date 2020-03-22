@@ -39,10 +39,19 @@
 ├── e-book                          电子书
 │   ├── go.md                       go书籍
 │   └── mysql.md                    mysql书籍
+├── fab                             fab部署
+│   ├── README.md
+│   ├── fab_config.yml
+│   └── fabfile.py
 ├── git
 │   └── git.md                      git 常用命令操作
 ├── idea
 │   └── idea_keyboard_shortcuts.md  idea快捷键
+├── linux                           linux积累
+│   ├── awk.md
+│   ├── ffmpeg.md
+│   ├── install_centos.md
+│   └── lsof.md
 └── nginx
     ├── examples.md                 前后分离部署
     ├── nginx.md                    nginx文档

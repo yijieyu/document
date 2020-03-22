@@ -1,0 +1,49 @@
+app_name: grasp_xiaoshuo
+
+hosts:
+  prod:
+    -
+      host: xxxxxx
+      password:
+      remote_path: /opt/projects/xxxx
+      back_log: /tmp/back_log/
+    -
+      host: user@xxx.xxx.xx.xx:22
+      password: password
+      remote_path: /tmp/xxxx
+      back_log: /tmp/back_log/
+
+  dev:
+    -
+      host: xxxxxx
+      password:
+      remote_path: /opt/projects/xxxx
+      back_log: /tmp/back_log/
+
+macro:
+  "go_version": "1.13"
+  "version": "0.8"
+
+# 发送前本地执行命令
+pre_cmd:
+  - GOOS=linux GOARCH=amd64 /usr/local/go/bin/go build -o xxx
+
+# 往服务器发送文件
+exec_files:
+  "xxx": "xxx"
+  "conf.yml": "conf.yml"
+
+# 服务器执行命令
+exec_cmd:
+  - chmod +x xxx
+  - supervisorctl stop xxx
+  - supervisorctl start xxx
+
+# 设置启动端口，默认所有服务器部署时使用同一个端口，如果不是则自行改造
+deploy_env:
+  default:
+    port: 8091
+  testing:
+    port: 8105
+  prod:
+    port: 8104
