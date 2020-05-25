@@ -51,7 +51,10 @@
 │   ├── awk.md
 │   ├── ffmpeg.md
 │   ├── install_centos.md
-│   └── lsof.md
+│   ├── lsof.md
+│   ├── samba.md                    linux共享目录给win使用
+│   ├── ssh.md                      ssh通道
+│   └── ulimit.md                   linux服务器句柄不够
 └── nginx
     ├── examples.md                 前后分离部署
     ├── nginx.md                    nginx文档
