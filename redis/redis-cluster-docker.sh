@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+docker exec -it redis7001 redis-cli -p 7001 -a d5FlKrrTPDy3tkX2 --cluster create 192.168.1.60:7001 192.168.1.60:7002 192.168.1.60:7003 192.168.1.60:7004 192.168.1.60:7005 192.168.1.60:7006 --cluster-replicas 1

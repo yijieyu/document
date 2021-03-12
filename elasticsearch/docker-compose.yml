@@ -1,0 +1,16 @@
+version: '2'
+services:
+  redis:
+    image: elasticsearch:5.6.9
+    container_name: elasticsearch
+    privileged: true
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./data:/usr/share/elasticsearch/data
+      #- ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "0.0.0.0:9200:9200"
+      - "0.0.0.0:9300:9300"

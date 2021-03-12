@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  ldap:
+    image: osixia/openldap:1.2.4
+    environment:
+      - TZ=PRC
+    volumes:
+      - ./ldap/:/var/lib/ldap/
+    ports:
+      - 389:389
+      - 636:636
+  admin:
+    image: osixia/phpldapadmin:0.8.0
+    volumes:
+      - ./data/admin/config:/container/service/phpldapadmin/assets/config
+    ports:
+      - 6443:443
+    links:
+      - ldap
